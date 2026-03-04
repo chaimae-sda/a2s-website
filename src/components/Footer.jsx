@@ -33,10 +33,12 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-semibold mb-4 text-blue-400">Contact</h4>
             <p className="text-gray-400 italic">{COMPANY_ADDRESS}</p>
+            <p className="text-gray-400 mt-2"> <a href="mailto:contact@a2s.ma" className="text-blue-400 hover:text-blue-300 transition-colors">contact@a2s.ma</a></p>
+
           </div>
         </div>
 
-        <div className="border-t border-gray-800 pt-8 text-center text-gray-500">
+        <div className="border-t border-gray-800 pt-8 text-center text-white-500">
           <p className="text-sm">
             © {new Date().getFullYear()} {COMPANY_NAME}. Tous droits réservés.
           </p>
