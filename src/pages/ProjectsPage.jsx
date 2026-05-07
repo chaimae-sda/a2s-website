@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Search } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import ProjectCard from '../components/Projects/ProjectCard';
+import ProjectCard from '../components/projects/ProjectCard';
 import { services } from '../data/services';
 import { allProjects } from '../data/projects';
-import './Projects.css';
+import '../styles/Projects.css';
 
 
 export default function ProjectsPage() {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Layout from '../components/Layout';
-import ScrollToTop from '../components/ScrollToTop';
+import Layout from '../components/common/Layout';
+import ScrollToTop from '../components/common/ScrollToTop';
 import EventsPage from '../pages/EventsPage';
 import ContactPage from '../pages/ContactPage';
 import ProjectsPage from '../pages/ProjectsPage';

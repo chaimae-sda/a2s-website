@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 // N'oublie pas d'ajouter MapPin et Mail dans les imports !
 import { Linkedin, Facebook, Instagram, MapPin, Mail } from 'lucide-react'; 
-import { COMPANY_NAME, COMPANY_ADDRESS, CONTACT_EMAIL, GOOGLE_MAPS_URL } from '../constants';
+import { COMPANY_NAME, COMPANY_ADDRESS, CONTACT_EMAIL, GOOGLE_MAPS_URL } from '../../constants';
 
 export default function Footer() {
   return (
