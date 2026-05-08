@@ -603,14 +603,13 @@ export default function JoinUs() {
                   border: '2px solid #cbd5e1',
                   backgroundColor: 'white',
                   color: '#475569',
-                  fontSize: '1rem',
+                  fontSize: '0.9rem',
                   fontWeight: '600',
                   borderRadius: '0.75rem',
                   cursor: 'pointer',
                   transition: 'all 0.2s',
                   textTransform: 'uppercase',
-                  letterSpacing: '0.05em',
-                  fontSize: '0.9rem'
+                  letterSpacing: '0.05em'
                 }}
                 onMouseEnter={(e) => {
                   e.target.style.backgroundColor = '#f1f5f9';
@@ -631,7 +630,7 @@ export default function JoinUs() {
                   padding: '0.75rem 2.5rem',
                   background: 'linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%)',
                   color: 'white',
-                  fontSize: '1rem',
+                  fontSize: '0.9rem',
                   fontWeight: '600',
                   border: 'none',
                   borderRadius: '0.75rem',
@@ -639,7 +638,6 @@ export default function JoinUs() {
                   transition: 'all 0.2s',
                   textTransform: 'uppercase',
                   letterSpacing: '0.05em',
-                  fontSize: '0.9rem',
                   opacity: status === 'sending' ? 0.7 : 1,
                   boxShadow: '0 4px 12px rgba(30, 64, 175, 0.3)'
                 }}
