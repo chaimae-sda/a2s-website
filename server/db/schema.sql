@@ -1,0 +1,80 @@
+-- Create Services table
+CREATE TABLE IF NOT EXISTS services (
+  id VARCHAR(50) PRIMARY KEY,
+  title VARCHAR(255) NOT NULL,
+  image VARCHAR(500),
+  description TEXT,
+  about TEXT,
+  whyUs TEXT,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+-- Create Service Offerings table
+CREATE TABLE IF NOT EXISTS service_offerings (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  service_id VARCHAR(50) NOT NULL,
+  offering TEXT NOT NULL,
+  `order` INT DEFAULT 0,
+  FOREIGN KEY (service_id) REFERENCES services(id) ON DELETE CASCADE
+);
+
+-- Create Projects table
+CREATE TABLE IF NOT EXISTS projects (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  slug VARCHAR(100) UNIQUE NOT NULL,
+  title VARCHAR(255) NOT NULL,
+  category VARCHAR(100),
+  service_id VARCHAR(50),
+  date VARCHAR(50),
+  description TEXT,
+  fullDescription TEXT,
+  image VARCHAR(500),
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  FOREIGN KEY (service_id) REFERENCES services(id) ON DELETE SET NULL
+);
+
+-- Create Project Technologies table
+CREATE TABLE IF NOT EXISTS project_technologies (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  project_id INT NOT NULL,
+  technology VARCHAR(100),
+  FOREIGN KEY (project_id) REFERENCES projects(id) ON DELETE CASCADE
+);
+
+-- Create Team Members table
+CREATE TABLE IF NOT EXISTS team_members (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
+  role VARCHAR(255),
+  image VARCHAR(500),
+  linkedin VARCHAR(500),
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+-- Create Actualites table
+CREATE TABLE IF NOT EXISTS actualites (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  title VARCHAR(255) NOT NULL,
+  content TEXT,
+  date VARCHAR(50),
+  image VARCHAR(500),
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+-- Create Upcoming Events table
+CREATE TABLE IF NOT EXISTS upcoming_events (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  title VARCHAR(255) NOT NULL,
+  description TEXT,
+  date VARCHAR(50),
+  time VARCHAR(50),
+  location VARCHAR(255),
+  image VARCHAR(500),
+  status VARCHAR(50) DEFAULT 'upcoming',
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);

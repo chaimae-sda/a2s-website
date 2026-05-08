@@ -5,6 +5,7 @@
     "private": true,
     "type": "module",
     "dependencies": {
+        "axios": "^1.6.0",
         "bootstrap": "^5.3.8",
         "lucide-react": "^0.263.1",
         "react": "^18.2.0",
@@ -21,6 +22,10 @@
     "scripts": {
         "dev": "vite",
         "build": "vite build",
-        "preview": "vite preview"
+        "preview": "vite preview",
+        "server": "cd server && npm start",
+        "server-dev": "cd server && npm run dev",
+        "server-init": "cd server && npm install && npm run init-db",
+        "dev-full": "concurrently \"npm run dev\" \"npm run server-dev\""
     }
 }
